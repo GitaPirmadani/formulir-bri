@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background-color: #121212;
+      color: #ffffff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Header Section */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 10%;
+      background: #222;
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+      transition: all 0.5s ease-in-out;
+    }
+    header.scrolled {
+      background: #333;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+    .logo {
+      font-size: 24px;
+      color: #08fa14;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+    nav ul li {
+      margin-left: 20px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #08fa14;
+    }
+
+    /* Home Section */
+    .home {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10%;
+    }
+    .home .content {
+      animation: slideIn 1s ease-out forwards;
+    }
+    .home .content h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      color: #08fa14;
+    }
+    .home .content p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeIn 1s ease-in forwards 0.5s;
+    }
+    .home .btn {
+      background: #08fa14;
+      color: #121212;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+    .home .btn:hover {
+      background: white;
+      color: #121212;
+    }
+    .home img {
+      width: 400px;
+      animation: scaleUp 1.5s ease-out forwards;
+    }
+
+    /* Animations */
+    @keyframes slideIn {
+      from {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    @keyframes scaleUp {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    /* About Section */
+    .about {
+      padding: 60px 10%;
+      text-align: center;
+    }
+    .about h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .about h2::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -10px;
+      width: 80px;
+      height: 3px;
+      background: #08fa14;
+    }
+    .about p {
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto;
+      opacity: 0;
+      animation: fadeIn 1s ease-in forwards;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">MyPortfolio</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Home Section -->
+  <section id="home" class="home">
+    <div class="content">
+      <h1>Welcome to My Portfolio</h1>
+      <p>I am a passionate developer creating engaging and dynamic web experiences.</p>
+      <a href="#about" class="btn">Learn More</a>
+    </div>
+    <img src="pgita.jpg.jpeg" alt="Illustration">
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>Hi, I’m Gita Pirmadani, a professional graphic designer with over two years of experience in creating compelling visual content. 
+      My expertise lies in  UI design, where I combine creativity and strategy 
+      to deliver designs that resonate with audiences and achieve business goals.</p>
+  </section>
+
+  <section id="pendidikan" class="section">
+    <h2>Riwayat Pendidikan</h2>
+    <ul>
+        <ul>
+           <li><strong>2026- 2028</strong>: S2 Sarjana Sistem Informasi,Universitas Indonesia</li>
+            <li><strong>2022 - 2026</strong>: Lulusan Sarjana Universitas Nurdin Hamzah, Jurusan Sistem Informasi</li>
+            <li><strong>2018 - 2021</strong>: Lulusan SMKN 4 Batanghari, Jurusan MULTIMEDIA</li>
+        </ul>
+    </ul>
+</section>
+<section id="kerja">
+    <div class="card">
+        <h2>Riwayat Kerja</h2>
+        <ul>
+            <li><strong>2027- Sekarang</strong>: Sofware developer, UI Desing</li>
+            <li><strong>2026- 2027 </strong>: Admin Perkantoran, PT CMM</li>
+            <li><strong>2025 </strong>: Magang di PT CMM, Batanghari </li>
+            <li><strong>2021 - 2022</strong>: Admin Pembukuaan pada tokoh Frozen Food </li>
+            <li><strong>2020 - 2021</strong>: Magang, Operator Foco Copy</li>
+        </ul>
+    </div>
+</section>
+
+<!-- Riwayat Organisasi -->
+<section id="organisasi" class="section">
+    <h2>Riwayat Organisasi</h2>
+    <ul>
+            <li><strong>2024 - 2026</strong>: Anggota Organisasi Himasif, Universitas Nurdin Hamzah</li>
+            <li><strong>2019 - 2021</strong>: Anggota Osis, SMKN 4 Batanghari</li>
+    </ul>
+</section>
+
+<!-- Riwayat Sertifikasi Keahlian -->
+<section id="sertifikasi" class="section">
+    <h2>Riwayat Sertifikasi Keahlian</h2>
+    <ul>
+        <li><strong>2027</strong>: Sertifikasi Google Certified, Google</li>
+             <li><strong>2023</strong>: Sertifikasi Seminar Islam, Kota Jambi</li>
+            <li><strong>2021</strong>: Sertifikasi Magang terbaik dengan nilai yang baik</li>
+
+    </ul>
+</section>
+
+<!-- Riwayat Karya Tulis / Produk / Lainnya -->
+<section id="karya" class="section">
+    <h2>Riwayat Karya</h2>
+    <ul>
+        <li><strong>2027</strong>: "Panduan Menjadi Manusia Cerdas ", Gita Pirmadani</li>
+    </ul>
+</section>
+<section id="contact">
+  <h2>Contact Me</h2>
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" required></textarea>
+    
+    <button type="submit">Send</button>
+  </form>
+</section>
+</main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Gita Pirmadani. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Header Scroll Animation
+    window.addEventListener('scroll', function () {
+      const header = document.querySelector('header');
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+  </script>
+</body>
+</html>
